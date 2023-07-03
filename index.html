@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Don't forget to put the attribute : loading="lazy" on images to let the browser choose when to load an image and imporve performance -->
+<!-- Feel free to also use data attribute for facilitate CSS -->
+
+<body>
+
+  <main>
+
+    <section class="card grid-layout">
+
+      <picture class="heading-picture">
+        <source class="img-filter" media="(min-width: 600px)"
+          srcset="images/image-header-desktop.jpg" />
+        <img src="images/image-header-mobile.jpg" alt="header image" />
+      </picture>
+
+      <div class="content grid-layout">
+
+        <div class="heading-content">
+          <h1 class="card-title">Get <strong class="word-accentuation">insights</strong> that help
+            your
+            buisness grow.</h1>
+          <p class="lead">Discover the benefits of data analytics and make better decision regarding
+            revenue, customer experience, and overall efficiency.</p>
+        </div>
+
+        <ul class="stats grid-layout">
+          <li>10k+<span>companies</span></li>
+          <li>314<span>templates</span></li>
+          <li>12M+<span>queries</span></li>
+        </ul>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

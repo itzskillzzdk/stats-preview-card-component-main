@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@300;400&display=swap");
+
+/* link : https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+:root {
+    --scroll-padding: 0;
+
+    /* COLORS */
+
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+
+    --white: hsl(0, 0%, 100%);
+    --slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white-2: hsla(0, 0%, 100%, 0.6);
+
+    /* FONT-FAMILY */
+
+    --ff-accent: "Lexend Deca", sans-serif;
+    --ff-base: "Inter", sans-serif;
+
+    /* FONT-WEIGHT */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    /* FONT-SIZE */
+
+    --fs-400: 0.9375rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.625rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem);
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--very-dark-blue);
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-400);
+    color: var(--white);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* utilities */
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.grid-layout {
+    display: grid;
+    place-items: center;
+    grid-auto-flow: dense;
+    gap: var(--div-spacing);
+}
+
+@media (width > 600px) {
+    .grid-layout {
+        --grid-columns: 2;
+        place-items: center;
+        grid-template-columns: repeat(
+            var(--grid-columns),
+            1fr
+        );
+    }
+
+    .content {
+        --grid-columns: 1;
+    }
+
+    .stats {
+        place-items: unset;
+        --grid-columns: 3;
+    }
+}
+
+/* card */
+
+.card {
+    --div-spacing: 1.75rem;
+
+    width: 326px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--dark-desaturated);
+}
+
+@media (width > 600px) {
+    .card {
+        width: 1200px;
+    }
+}
+
+.heading-picture {
+    position: relative;
+}
+
+.img-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--soft-violet);
+    filter: contrast(200%) opacity(30%);
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 9999;
+}
+
+@media (width > 600px) {
+    .heading-picture,
+    .heading-picture img {
+        width: 100%;
+    }
+}
+
+.content {
+    --padding: var(--div-spacing);
+
+    padding: 0.75rem var(--padding) var(--padding);
+
+    text-align: center;
+    line-height: 1.7;
+}
+
+@media (width > 600px) {
+    .content {
+        --padding: 6.5em;
+        --div-spacing: 5rem;
+
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        text-align: left;
+
+        padding: 0 var(--padding);
+    }
+}
+
+.heading-content {
+    --margin-bottom: 1rem;
+}
+
+@media (width > 600px) {
+    .heading-content {
+        --margin-bottom: 1.625rem;
+    }
+}
+
+.card-title {
+    font-size: var(--fs-700);
+    line-height: 1.2;
+    margin-bottom: var(--margin-bottom);
+}
+
+@media (width > 600px) {
+    .card-title {
+        font-size: calc(var(--fs-700) + 10px);
+    }
+}
+
+.word-accentuation {
+    color: var(--soft-violet);
+}
+
+.lead {
+    color: var(--slightly-transparent-white-1);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+}
+
+.stats {
+    --div-spacing: 1.5rem;
+
+    width: 100%;
+
+    font-size: calc(var(--fs-600));
+    font-weight: var(--fw-bold);
+}
+
+.stats span {
+    display: block;
+    font-family: var(--ff-accent);
+    text-transform: uppercase;
+    font-size: calc(var(--fs-400) - 1px);
+    font-weight: var(--fw-light);
+    color: var(--slightly-transparent-white-2);
+}
